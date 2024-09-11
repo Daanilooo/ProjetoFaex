@@ -1,10 +1,11 @@
 <?php
 
-namespace Carlos\Scheduler\Routers\User;
+namespace Danilo\Receitas\Routers\User;
 
 use CoffeeCode\Router\Router;
-use Carlos\Scheduler\Controllers\User\Login;
-use Carlos\Scheduler\Controllers\User\Register;
+use Danilo\Receitas\Controllers\User\Login;
+use Danilo\Receitas\Controllers\User\Register;
+use Danilo\Receitas\Controllers\User\RegisterPost;
 
 class UserRouters
 {
@@ -12,12 +13,16 @@ class UserRouters
     
     private Login $login;
 
+    private RegisterPost $registerPost;
     private Register $register;
 
     public function __construct(Router $router) {
         $this->router = $router;
         $this->login = new Login();
         $this->register = new Register();
+        $this->registerPost = new RegisterPost();
+
+
     }
 
     public function execute()
@@ -29,5 +34,10 @@ class UserRouters
         $this->router->get("/register", function () {
             $this->register->execute();
         });
+
+        $this->router->post("/register/save", function ($data) {
+            $this->registerPost->execute($data);
+        });
+
     }
 }

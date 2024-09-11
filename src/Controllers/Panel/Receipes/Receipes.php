@@ -1,9 +1,9 @@
 <?php
-namespace Carlos\Scheduler\Controllers\Panel\Scheduler;
+namespace Danilo\Receitas\Controllers\Panel\Receipes;
 
-use Carlos\Scheduler\Helpers\Template\Loader;
+use Danilo\Receitas\Helpers\Template\Loader;
 
-class Scheduler
+class Receipes
 {
     public function __construct() {
         $this->template = new Loader();

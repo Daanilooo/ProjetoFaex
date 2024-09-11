@@ -15,27 +15,27 @@
 
 <body>
     <div class="container-login">
-        <form action="">
+        <form action="/register/save" method="post">
             <div class="container-logo">
                 <img src="/public/img/logo.png" alt="">
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="name">
+                <input name= "name" type="text" class="form-control" id="name" required>
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Telefone</label>
-                <input type="text" class="form-control" id="phone">
+                <input name="phone" type="text" class="form-control" id="phone" required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email">
+                <input name="email" type="email" class="form-control" id="email" required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" >
+                <input name="password" type="password" class="form-control" id="password" required>
             </div>
-            <button type="button" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
             <div class="container-action">
                 <a href="/login">Voltar</a>
             </div>

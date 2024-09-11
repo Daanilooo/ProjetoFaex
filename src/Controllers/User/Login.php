@@ -1,7 +1,7 @@
 <?php
-namespace Carlos\Scheduler\Controllers\User;
+namespace Danilo\Receitas\Controllers\User;
 
-use Carlos\Scheduler\Helpers\Template\Loader;
+use Danilo\Receitas\Helpers\Template\Loader;
 
 class Login
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Carlos\Scheduler\Helpers\Template;
+namespace Danilo\Receitas\Helpers\Template;
 
 class Loader
 {

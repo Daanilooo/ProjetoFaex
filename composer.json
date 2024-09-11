@@ -1,17 +1,17 @@
 {
-    "name": "carlos/scheduler",
+    "name": "danilo/receitas",
     "autoload": {
         "psr-4": {
-            "Carlos\\Scheduler\\": "src/"
+            "Danilo\\Receitas\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "carlos",
-            "email": "jaime_andrek@hotmail.com"
+            "name": "Danilo",
+            "email": "daanilosouza273@gmail.com"
         }
     ],
     "require": {
-        "coffeecode/router": "^2.0"
+        "coffeecode/router": "^1.0"
     }
 }
