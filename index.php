@@ -8,7 +8,7 @@ use Danilo\Receitas\Models\Users\Users;
 
 // $user = new Users();
 
-// $data = [
+// $data = 
 //     'name' => "Danilo Souza",
 //     'email' => "danilo@gmail.com",
 //     'phone' => "343534657",
