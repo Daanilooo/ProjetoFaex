@@ -6,6 +6,7 @@ use CoffeeCode\Router\Router;
 use Danilo\Receitas\Controllers\User\Login;
 use Danilo\Receitas\Controllers\User\Register;
 use Danilo\Receitas\Controllers\User\RegisterPost;
+use Danilo\Receitas\Controllers\User\LoginPost;
 
 class UserRouters
 {
@@ -21,8 +22,7 @@ class UserRouters
         $this->login = new Login();
         $this->register = new Register();
         $this->registerPost = new RegisterPost();
-
-
+        $this->loginPost = new LoginPost();
     }
 
     public function execute()
@@ -31,6 +31,10 @@ class UserRouters
             $this->login->execute();
         });
         
+        $this->router->post("/login/validate", function ($data) {
+            $this->loginPost->execute($data);
+        });
+
         $this->router->get("/register", function () {
             $this->register->execute();
         });

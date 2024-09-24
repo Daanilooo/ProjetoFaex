@@ -17,7 +17,27 @@ class RegisterPost
 
     public function execute($data)
     {
+        if(!$this->validate->execute($data)){
+            $this->message->setMessageError("Verifique os campos");
+            header('location: /register');
+            return;
+        }
+        $dataUser = $this->users->findOne([
+            "email" => $data['email']
+        ]);
+
+        if($data){
+            $this->message->setMessageError("Este usuario ja existe!");
+            header('location: /register');
+            return;
+        }
         $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
+
+        if($this->users->create($data) == false){
+            $this->message->setMessageError("Ocorreu um erro ao registrar no banco de dados");
+            header('location: /register');
+            return;
+        }
         
         $this->users->create($data);    
         $this->message->setMessageSucess("Registrado com sucesso");

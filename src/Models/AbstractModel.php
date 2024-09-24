@@ -36,12 +36,45 @@ abstract class AbstractModel{
         }
     }
 
-    public function findOne(){
+    public function findOne($condition, $colunm = "*"){
+        $where = "";
+        foreach($condition as $key => $value){
+            $where.= "$key =:$key AND ";
+            
+        }
+        $where = rtrim($where, "AND ");
+        $table = $this->table;
+        $sql = "SELECT $colunm FROM $table WHERE ".$where;
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute($condition);    
+        return $stmt->fetchObject();
 
     }
 
-    public function findAll(){
+    public function findAll($condition = "1", $colunm = "*"){
+        $where = "";
+        if($condition !="1"){
+            $where = "";
+            foreach($condition as $key => $value){
+                $where.= "$key = :$key AND ";
+                
+            }
+            $where = rtrim($where, "AND ");
+        } else {
+            $where = "1";
+        }
         
+        $table = $this->table;
+        $sql = "SELECT $colunm FROM $table WHERE" .$where;
+        $stmt = $this->connect->prepare($sql);
+        if($condition !="1"){
+            $stmt->execute($condition); 
+        }
+        else{
+            $stmt->execute();
+        }  
+        return $stmt->fetchAll();
     }
 
     public function update(){
