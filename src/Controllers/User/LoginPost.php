@@ -3,10 +3,14 @@
     
     use Danilo\Receitas\Models\Users\Users;
     use Danilo\Receitas\Helpers\Message\Message;
+    use Danilo\Receitas\Models\Users\UserSession;
+
     class LoginPost{
+
         public function __construct(){
             $this->users = new Users();
             $this->message = new Message();
+            $this->userSession = new UserSession();
         }
 
         public function execute($data){
@@ -30,7 +34,11 @@
             }
             if(!password_verify($data['password'],$user->password)){
                 $this->message->setMessageError("Senha invalido");
+                header('location:/login');
+                return;
             };
+
+            $this->userSession->create($user->id,$user->name,$user->email);
         }
     }
    

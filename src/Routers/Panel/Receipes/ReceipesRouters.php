@@ -3,6 +3,7 @@
 namespace Danilo\Receitas\Routers\Panel\Receipes;
 
 use CoffeeCode\Router\Router;
+use Danilo\Receitas\Models\Users\UserSession;
 
 class ReceipesRouters
 {
@@ -17,9 +18,11 @@ class ReceipesRouters
     {
         $this->router->namespace('Danilo\Receitas\Controllers\Panel\Receipes');
 
-        $this->router->get("/panel/receipes/", 'Receipes:execute');
+        $this->router->get("/panel/receipes/", 'Receipes:execute',middleware: UserSession::class);
 
         $this->router->get("/panel/receipes/create", 'Create:execute');
+
+        $this->router->get("/panel/receipes/edit", 'Edit:execute');
     }
 
 }
