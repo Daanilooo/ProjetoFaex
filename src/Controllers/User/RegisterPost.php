@@ -19,7 +19,7 @@ class RegisterPost
     {
         if(!$this->validate->execute($data)){
             $this->message->setMessageError("Verifique os campos");
-            header('location: /register');
+            header ('location: /register');
             return;
         }
         $dataUser = $this->users->findOne([

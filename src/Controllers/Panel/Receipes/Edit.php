@@ -11,7 +11,7 @@ class Edit
 
     public function execute()
     {   
-        echo "tela de edição";
+        $this->template->render('panel/receipesEdit', true);
     }
 
 }

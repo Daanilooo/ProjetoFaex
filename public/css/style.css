@@ -1,3 +1,6 @@
+body{
+    background-color: #f7f7f7;
+}
 .container-login {
     background-color: rgba(216, 216, 216, 0.242);
     display: flex;
@@ -50,4 +53,8 @@
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.251);
+}
+
+.navlogo{
+    height: 50px;
 }

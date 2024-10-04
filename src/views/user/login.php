@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/projetoFaex/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/style.css">
     <title>Login</title>
 </head>
 
@@ -17,7 +17,7 @@
     <div class="container-login">
         <form action="/login/validate" method="post">
             <div class="container-logo">
-                <img src="/projetoFaex/public/img/logo.png" alt="">
+                <img src="/public/img/logo.png" alt="">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>

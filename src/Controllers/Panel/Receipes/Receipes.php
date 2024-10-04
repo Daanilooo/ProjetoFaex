@@ -11,7 +11,7 @@ class Receipes
 
     public function execute()
     {   
-        echo "Listagem de agendamentos";
+        $this->template->render('panel/receipes', true);
     }
 
 }
