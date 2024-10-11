@@ -16,7 +16,8 @@ class RegisterPost
     }
 
     public function execute($data)
-    {
+    {   
+
         if(!$this->validate->execute($data)){
             $this->message->setMessageError("Verifique os campos");
             header ('location: /register');
@@ -26,7 +27,7 @@ class RegisterPost
             "email" => $data['email']
         ]);
 
-        if($data){
+        if($dataUser){
             $this->message->setMessageError("Este usuario ja existe!");
             header('location: /register');
             return;

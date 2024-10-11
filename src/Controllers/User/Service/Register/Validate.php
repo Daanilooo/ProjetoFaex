@@ -4,6 +4,7 @@ namespace Danilo\Receitas\Controllers\User\Service\Register;
 class Validate{
 
     public function execute($data){
+        $sucess = true;
         foreach($this->getFields() as $key => $field){
             if ($field['required'] == false){
                 continue;

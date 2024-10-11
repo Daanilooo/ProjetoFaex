@@ -18,11 +18,13 @@ class ReceipesRouters
     {
         $this->router->namespace('Danilo\Receitas\Controllers\Panel\Receipes');
 
-        $this->router->get("/panel/receipes/", 'Receipes:execute');
+        $this->router->get("/panel/receipes/", 'Receipes:execute', middleware: UserSession::class);
         // ,middleware:UserSession::class
-        $this->router->get("/panel/receipes/create", 'Create:execute');
+        $this->router->get("/panel/receipes/create", 'Create:execute', middleware: UserSession::class);
 
-        $this->router->get("/panel/receipes/edit", 'Edit:execute');
+        $this->router->get("/panel/receipes/edit", 'Edit:execute', middleware: UserSession::class);
+
+        $this->router->get("/panel/receipes/logout", 'Logout:execute', middleware: UserSession::class);
     }
 
 }

@@ -14,14 +14,18 @@
         }
 
         public function execute($data){
+            $sucess = true;
             if(!isset($data['email']) or !isset($data['password'])){
                 $this->message->setMessageError("Voce precisa preencher todos os campos");
+                $sucess=false;
             }
             if(empty($data['email']) || empty($data['password'])){
                 $this->message->setMessageError("Os campos devem estar preenchidos");
+                $sucess = false;
             }
+            
             if(!$sucess){
-                header('location: / login');
+                header('location:/login');
                 return;
             }  
             $user = $this->users->findOne([
@@ -39,6 +43,7 @@
             };
 
             $this->userSession->create($user->id,$user->name,$user->email);
+            header('location:/panel/receipes/');
         }
     }
    

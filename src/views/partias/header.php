@@ -21,7 +21,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <h6 class="nav-link active text-white">Bem vindo <?= $_SESSION["user"]['name'] ?></h6>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="/panel/receipes/">Receitas</a>
                     </li>
@@ -46,6 +50,9 @@
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+                <form action="/panel/receipes/logout" class="p2 m2 d-flex">
+                    <button class="btn btn-outline-light" type="submit">Log Out</button>
                 </form>
             </div>
         </div>
