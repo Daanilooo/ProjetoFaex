@@ -11,34 +11,30 @@
 
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Bolo de cenoura</td>
-      <td>ovo,cenoura,chocolate</td>
-      <td>Faça o bolo de cenoura e jogue o chocolate por cima</td>
-      <td>2 horas</td>
-      <td><a class="btn btn-danger" href="/panel/receipes/edit">edit</a></td>
-      <td><button type="submit" class="btn btn-danger">delete</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Pudim</td>
-      <td>Leite condensado, ovo</td>
-      <td>faça o pudim</td>
-      <td>1 hora</td>
-      <td><a class="btn btn-danger" href="/panel/receipes/edit">edit</a></td>
-      <td><button type="submit" class="btn btn-danger">delete</button></td>
-      
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Macarrão</td>
-      <td>Macarrão, molho de tomate, sal</td>
-      <td>40 minutos</td>
-      <td><a class="btn btn-danger" href="/panel/receipes/edit">edit</a></td>
-      <td><button type="submit" class="btn btn-danger">delete</button></td>
-
-    </tr>
+   <tbody>
+      <?php foreach ($receipes as $key => $receipe): ?>
+          <tr>
+              <th scope="row">1</th>
+              <td><?= $scheduler['nameReceipes'] ?></td>
+              <td><?= $scheduler['ingredients'] ?></td>
+              <td><?= $scheduler['prepare'] ?></td>
+              <td><?= $scheduler['timePrepare'] ?></td>
+              
+              <td>
+                  <div class="dropdown">
+                      <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Ações
+                      </button>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/panel/scheduler/edit"><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Deletar</a></li>
+                      </ul> 
+                  </div>
+              </td>
+          </tr>    
+      <?php endforeach;?>           
   </tbody>
+</table>
+</div>
 </table>

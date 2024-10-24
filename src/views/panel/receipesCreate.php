@@ -1,6 +1,6 @@
 <div class="container-fluid">
 <div class='card p-5'>
-<form action= method="post">
+<form action="/panel/receipes/create/save" method="post">
             <div class="mb-3">
                 <label for="nameReceipes" class="form-label">Nome da Receita</label>
                 <input name= "nameReceipes" type="text" class="form-control" id="nameReceiepes" required>

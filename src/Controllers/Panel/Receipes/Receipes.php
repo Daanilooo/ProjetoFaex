@@ -2,16 +2,21 @@
 namespace Danilo\Receitas\Controllers\Panel\Receipes;
 
 use Danilo\Receitas\Helpers\Template\Loader;
+use Danilo\Receitas\Models\Receipes\Receipes;
 
-class Receipes
+class Receipe
 {
     public function __construct() {
         $this->template = new Loader();
+        $this->receipes = new Receipes();
     }
 
     public function execute()
     {   
-        $this->template->render('panel/receipes', true);
+        $receipes = $this->receipes->findAll();
+        $this->template->render('panel/receipes', true,[
+            "receipes" => $receipes
+        ]);
     }
 
 }
