@@ -24,7 +24,7 @@ class ReceipesRouters
 
         $this->router->post("/panel/receipes/create/save", 'CreatePost:execute', middleware: UserSession::class);
 
-        $this->router->get("/panel/receipes/edit", 'Edit:execute', middleware: UserSession::class);
+        $this->router->get("/panel/receipes/edit/{id}", 'Edit:execute', middleware: UserSession::class);
 
         $this->router->get("/panel/receipes/logout", 'Logout:execute', middleware: UserSession::class);
     }

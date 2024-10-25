@@ -2,13 +2,13 @@
 namespace Danilo\Receitas\Controllers\Panel\Receipes;
 
 use Danilo\Receitas\Helpers\Template\Loader;
-use Danilo\Receitas\Models\Receipes\Receipes;
+use Danilo\Receitas\Models\Receipes\Receipes as ReceipesModel;
 
-class Receipe
+class Receipes
 {
     public function __construct() {
         $this->template = new Loader();
-        $this->receipes = new Receipes();
+        $this->receipes = new ReceipesModel();
     }
 
     public function execute()

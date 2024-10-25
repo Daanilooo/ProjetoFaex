@@ -2,12 +2,12 @@
 <div class='card p-5'>
 <form action="/panel/receipes/create/save" method="post">
             <div class="mb-3">
-                <label for="nameReceipes" class="form-label">Nome da Receita</label>
-                <input name= "nameReceipes" type="text" class="form-control" id="nameReceiepes" required>
+                <label for="name" class="form-label">Nome da Receita</label>
+                <input name= "name" type="text" class="form-control" id="name" required>
             </div>
             <div class="mb-3">
-                <label for="ingredients" class="form-label">Ingredientes</label>
-                <input name="ingredients" type="text" class="form-control" id="ingredients" required>
+                <label for="ingredient" class="form-label">Ingredientes</label>
+                <input name="ingredient" type="text" class="form-control" id="ingredient" required>
             </div>
             <div class="mb-3">
                 <label for="prepare" class="form-label">Modo de Preparo</label>

@@ -47,42 +47,52 @@ abstract class AbstractModel{
         $sql = "SELECT $colunm FROM $table WHERE ".$where;
 
         $stmt = $this->connect->prepare($sql);
-        $stmt->execute($condition);    
-        return $stmt->fetchObject();
+        $stmt->execute($condition); 
 
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC)[0];
     }
 
-    public function findAll($condition = "1", $colunm = "*"){
+    public function findAll($condition = [], $column = "*")
+    { 
         $where = "";
-        if($condition !="1"){
-            $where = "";
-            foreach($condition as $key => $value){
+        if (count($condition) > 0) {
+            foreach ($condition as $key => $value) {
                 $where.= "$key = :$key AND ";
-                
             }
             $where = rtrim($where, "AND ");
         } else {
             $where = "1";
         }
-        
+      
         $table = $this->table;
-        $sql = "SELECT $colunm FROM $table WHERE" .$where;
+        $sql = "SELECT $column FROM $table WHERE " .$where;
         $stmt = $this->connect->prepare($sql);
-        if($condition !="1"){
-            $stmt->execute($condition); 
-        }
-        else{
+        if (count($condition) > 0)  {
+            $stmt->execute($condition);
+        } else {
             $stmt->execute();
-        }  
-        return $stmt->fetchAll();
+        }
+        
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
+
 
     public function update(){
 
     }
 
     public function delete(){
-    
+        $table = $this->table;
+        $sql = "DELETE FROM $table WHERE id= :id";
+
+        $stmt = $this->connect->prepare($sql);
+        $response = $stmt->execute([
+            'id'=> $id
+        ]);
+        if($response){
+            return true;
+        }
+        return false;
     }
 }
 ?>

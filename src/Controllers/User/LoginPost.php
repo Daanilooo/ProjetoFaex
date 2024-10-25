@@ -48,8 +48,8 @@
                 return;
             }
             
-            $this->userSession->create($user->id, $user->name, $user->email);
-    
+            $this->userSession->create($user['id'], $user['name'], $user['email']);
+            
             header('location: /panel/receipes/');
         }
     }

@@ -6,31 +6,31 @@
       <th scope="col">Ingredientes</th>
       <th scope="col">Modo de Preparo</th>
       <th scope="col">Tempo de Preparo</th>
-      <th scope="col">Editar</th>
-      <th scope="col">Deletar</th>
-
+      <th scope="col"></th>
     </tr>
   </thead>
    <tbody>
       <?php foreach ($receipes as $key => $receipe): ?>
           <tr>
-              <th scope="row">1</th>
-              <td><?= $scheduler['nameReceipes'] ?></td>
-              <td><?= $scheduler['ingredients'] ?></td>
-              <td><?= $scheduler['prepare'] ?></td>
-              <td><?= $scheduler['timePrepare'] ?></td>
+              <td><?= $receipe['id'] ?></td>
+              <td><?= $receipe['name'] ?></td>
+              <td><?= $receipe['ingredient'] ?></td>
+              <td><?= $receipe['prepare'] ?></td>
+              <td><?= $receipe['timePrepare'] ?></td>
               
               <td>
-                  <div class="dropdown">
-                      <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          Ações
-                      </button>
-                      <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="/panel/scheduler/edit"><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
-                          <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Deletar</a></li>
-                      </ul> 
-                  </div>
+              <div>
+                <button class="btn-alert" type="button">
+                    <a style="text-decoration:none" href="/panel/receipes/edit/<?= $receipe['id'] ?>">
+                Editar  
+                    </a>
+                </button>
+                <form action>
+                  <button class="btn-danger" type="button">    
+                    Deletar              
+                  </button>
+                </form>
+              </div>      
               </td>
           </tr>    
       <?php endforeach;?>           
