@@ -81,7 +81,7 @@ abstract class AbstractModel{
 
     }
 
-    public function delete(){
+    public function delete($id){
         $table = $this->table;
         $sql = "DELETE FROM $table WHERE id= :id";
 

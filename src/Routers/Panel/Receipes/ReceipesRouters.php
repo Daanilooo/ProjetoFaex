@@ -26,6 +26,8 @@ class ReceipesRouters
 
         $this->router->get("/panel/receipes/edit/{id}", 'Edit:execute', middleware: UserSession::class);
 
+        $this->router->post("/panel/receipes/delete/{id}", 'Delete:execute', middleware: UserSession::class);
+
         $this->router->get("/panel/receipes/logout", 'Logout:execute', middleware: UserSession::class);
     }
 

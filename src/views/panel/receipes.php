@@ -19,14 +19,15 @@
               <td><?= $receipe['timePrepare'] ?></td>
               
               <td>
-              <div>
+              <div style="display:flex;
+              ">
                 <button class="btn-alert" type="button">
                     <a style="text-decoration:none" href="/panel/receipes/edit/<?= $receipe['id'] ?>">
                 Editar  
                     </a>
                 </button>
-                <form action>
-                  <button class="btn-danger" type="button">    
+                <form action="/panel/receipes/delete/<?= $receipe['id'] ?>" method="post">
+                  <button class="btn-danger" type="submit">    
                     Deletar              
                   </button>
                 </form>
