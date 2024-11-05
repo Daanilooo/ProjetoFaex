@@ -77,8 +77,28 @@ abstract class AbstractModel{
     }
 
 
-    public function update(){
+    public function update($data, $id)
+    {
+        try {
+            $set = "";
+            foreach($data as $key => $value) {
+                $set .= "$key = :$key,";
+            }
+            
+            $set = rtrim($set, ",");
+            $table = $this->table;
+            $sql = "UPDATE $table SET $set WHERE id = :id";
+         
+            $stmt = $this->connect->prepare($sql);
+            $data["id"] = $id;
+            if ($stmt->execute(params: $data)) {
+                return true;
+            }
 
+            return false;
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
     public function delete($id){

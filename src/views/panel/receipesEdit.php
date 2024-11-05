@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="card p-5">
-        <form action="" method="post">
+        <form action="/panel/receipes/edit/<?= $receipes['id'] ?>"" method="post">
             <div class="mb-3">
                 <label for="name" class="form-label">Nome da Receita</label>
                 <input  value="<?= $receipes['name'] ?>"  name="name" type="text" class="form-control" required>
