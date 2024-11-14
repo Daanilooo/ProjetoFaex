@@ -2,7 +2,7 @@
 namespace Danilo\Receitas\Helpers\Message;
 
 class Message{
-    public function setMessageSucess($message){
+    public function setMessageSuccess($message){
         $_SESSION['message'][]=[
             'type' =>'sucess',
             'message'=>$message

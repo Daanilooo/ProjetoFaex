@@ -16,7 +16,7 @@ class EditPost
         $id = $data['id'];
         unset($data['id']);
         $this->receipes->update($data, $id);
-        // $this->message->setMessageSuccess('Agendamento atualizado com sucesso');
+        $this->message->setMessageSuccess('Receita atualizada com sucesso');
         header('location: /panel/receipes/');
     }
 }

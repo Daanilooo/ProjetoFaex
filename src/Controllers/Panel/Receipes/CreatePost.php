@@ -19,7 +19,7 @@ class CreatePost
     {  
         //deve conter alem da criação a validação dos dados     
         $this->receipes->create($data);
-        // $this->message->setMessageSuccess('Agendamento criado com sucesso');
+        $this->message->setMessageSuccess('Receita criada com sucesso');
         header('location: /panel/receipes/');
     }
 }

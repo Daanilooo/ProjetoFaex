@@ -11,12 +11,23 @@ class Receipes
         $this->receipes = new ReceipesModel();
     }
 
-    public function execute()
+    public function execute($data)
     {   
+        $search = "";
+        if (isset($_GET['nameFilter'])){
+            $search = $_GET['nameFilter'];
+            $receipes = $this->receipes->findAll([
+                "name" => $_GET['nameFilter']
+            ]);
+        }else{
         $receipes = $this->receipes->findAll();
+        }
+
         $this->template->render('panel/receipes', true,[
-            "receipes" => $receipes
+            "receipes" => $receipes,
+            "search" => $search
         ]);
     }
+
 
 }

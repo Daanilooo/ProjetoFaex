@@ -17,7 +17,7 @@ class Delete
     public function execute($data)
     {   
         if($this->receipes->delete($data['id'])) {
-            // $this->message->setMessageSuccess('Deleted successfully');
+            $this->message->setMessageSuccess('Deletado com sucesso');
             header('Location: /panel/receipes/');
             return;
         }

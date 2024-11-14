@@ -21,6 +21,8 @@ class ReceipesRouters
         $this->router->get("/api/receipes/", 'ApiReceipes:execute');
 
         $this->router->get("/panel/receipes/", 'Receipes:execute', middleware: UserSession::class);
+
+        $this->router->get("/panel/receipes/search", 'Receipes:execute', middleware: UserSession::class);
         // ,middleware:UserSession::class
         $this->router->get("/panel/receipes/create", 'Create:execute', middleware: UserSession::class);
 
