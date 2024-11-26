@@ -1,7 +1,4 @@
-    <footer>
-     
-
-    <footer class="bg-light text-dark mt-5">
+    <footer class="bg-light text-dark mt-5" style="margin-top:100px;">
         <div class="container py-4">
             <div class="row">
                 <div class="col-md-6">

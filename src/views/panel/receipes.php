@@ -1,3 +1,4 @@
+<div class="container-list">
 <form action="/panel/receipes/search" mathod="get" class="d-flex" role="search">
     <input value="<?= $search ?>" class="form-control me-2" type="search" placeholder="Search" name="nameFilter">
     <button class="btn" type="submit">Search</button>
@@ -5,7 +6,6 @@
 <?php if ($search != "") { ?>
             <a href="/panel/receipes">Limpar</a>
         <?php } ?>
-    </div>
 <table class="table">
   <thead>
     <tr>
@@ -47,3 +47,4 @@
 </table>
 </div>
 </table>
+</div>

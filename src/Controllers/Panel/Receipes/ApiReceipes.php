@@ -14,7 +14,10 @@ class ApiReceipes
     public function execute()
     {   
         $receipes = $this->receipes->findAll();
-        
+
         echo json_encode($receipes);
+        echo json_encode([
+            "total_receipes" => count( $receipes)
+        ]);
     }
 }

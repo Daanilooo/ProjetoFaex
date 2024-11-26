@@ -52,7 +52,7 @@ abstract class AbstractModel{
         return $stmt->fetchAll(\PDO::FETCH_ASSOC)[0];
     }
 
-    public function findAll($condition = [], $column = "*")
+    public function findAll($condition = [], $column = "*", $limit = false)
     { 
         $where = "";
         if (count($condition) > 0) {
@@ -61,11 +61,16 @@ abstract class AbstractModel{
             }
             $where = rtrim($where, "AND ");
         } else {
-            $where = "1";
+            $where = "";
         }
       
+        $whereCodition = $where == "" ? $where : " WHERE " .$where;
         $table = $this->table;
-        $sql = "SELECT $column FROM $table WHERE " .$where;
+        if (!$limit) {
+            $sql = "SELECT $column FROM $table" .$whereCodition;
+        } else {
+            $sql = "SELECT $column FROM $table " .$whereCodition . " limit $limit";
+        }
         $stmt = $this->connect->prepare($sql);
         if (count($condition) > 0)  {
             $stmt->execute($condition);
