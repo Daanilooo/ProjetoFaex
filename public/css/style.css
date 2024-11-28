@@ -1,6 +1,7 @@
-body{
+body {
     background-color: #f7f7f7;
 }
+
 .container-login {
     background-color: rgba(216, 216, 216, 0.242);
     display: flex;
@@ -17,7 +18,7 @@ body{
     box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.251)
 }
 
-.container-action{
+.container-action {
     display: flex;
     justify-content: center;
     margin-top: 10px;
@@ -32,33 +33,59 @@ body{
     height: 50px;
 }
 
-.container-message{
+.container-message {
     position: fixed;
     top: 20px;
     right: 20px;
 }
 
-.danger-message{
+.danger-message {
     background-color: rgba(255, 30, 0, 0.541);
     color: #fff;
 }
 
-.sucess-message{
+.sucess-message {
     background-color: rgb(0, 255, 0);
     color: #fff;
 }
 
-.content-message{
+.content-message {
     margin: 15px;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.251);
 }
 
-.navlogo{
+.navlogo {
     height: 50px;
 }
 
-.container-list{
+.container-list {
     height: 100vh;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn-light {
+    background-color: #e70303;
+}
+
+.btn-light:hover {
+    background-color: #ccc;
+}
+
+.bi {
+    font-size: 1.2em;
 }

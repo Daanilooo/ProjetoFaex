@@ -17,7 +17,9 @@
     <div class="container-login">
         <form action="/login/validate" method="post">
             <div class="container-logo">
-                <img src="/public/img/logo.png" alt="">
+                <a href="/">
+                    <img src="/public/img/logo.png" alt="">
+                </a>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>

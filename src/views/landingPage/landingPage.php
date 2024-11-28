@@ -41,18 +41,18 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="public/img/logo.png" alt=""> -->
         <h1 class="sitename">Receipes</h1>
         <span>.</span>
       </a>
-
+  
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home<br></a></li>
           <li><a href="#about">Sobre</a></li>
-          <li><a href="#contact">Contatos</a></li>
+          <li><a href="#footer">Contatos</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -152,10 +152,11 @@ Junte-se a nós nesta jornada saborosa e compartilhe suas delícias com o mundo!
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-clipboard-data"></i>
                   
-                  <h4 class="feature-title mt-24"><?=  $value["name"] ?> | <?=  $value["ingredient"] ?></h4>
-                                        <p class="text-sm mb-0"><?=  $value["timePrepare"] ?></p>
-                                    </div>
-                                </div>
+                  <h4 class="feature-title mt-24"><?=  $value["name"] ?></h4> 
+                    <b>Ingredientes: </b>
+                    <h5> <?=  $value["ingredient"] ?></h5>
+                    </div>
+                </div>
                             <?php endforeach; ?>
               </div><!-- End Icon Box -->
 
@@ -432,19 +433,6 @@ Junte-se a nós nesta jornada saborosa e compartilhe suas delícias com o mundo!
 
       </div>
     </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Yummy</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-
-  </footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
