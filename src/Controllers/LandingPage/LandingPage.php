@@ -17,7 +17,7 @@ class LandingPage
     {
        
         $receipes = $this->receipes->findAll([],"*", 6);
-        $this->template->render("ladingPage/ladingPage", false, [
+        $this->template->render("landingPage/landingPage", false, [
             "receipes" => $receipes
         ]);
     }
